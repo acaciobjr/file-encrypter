@@ -68,11 +68,22 @@ class InterfaceGrafica:
 
         self.criptografia = Criptografia()
 
-        self.carregar_chave_button = tk.Button(root, text="Carregar Chave Privada", command=self.carregar_chave)
-        self.carregar_chave_button.pack()
+        #self.carregar_chave_button = tk.Button(root, text="Carregar Chave Privada", command=self.carregar_chave)
+        #self.carregar_chave_button.packc
 
-        self.descriptografar_button = tk.Button(root, text="Descriptografar Arquivo", command=self.descriptografar_arquivo)
-        self.descriptografar_button.pack()
+        #self.descriptografar_button = tk.Button(root, text="Descriptografar Arquivo", command=self.descriptografar_arquivo)
+        #self.descriptografar_button.pack()
+
+        self.barra_ferramentas = tk.Frame(root)
+        self.barra_ferramentas.pack(side=tk.TOP, fill=tk.X)
+
+        self.carregar_chave_button = tk.Button(self.barra_ferramentas, text="Carregar Chave Privada",
+                                               command=self.carregar_chave)
+        self.carregar_chave_button.pack(side=tk.LEFT, anchor=tk.CENTER, fill=tk.BOTH)
+
+        self.descriptografar_button = tk.Button(self.barra_ferramentas, text="Descriptografar Arquivo",
+                                                command=self.descriptografar_arquivo)
+        self.descriptografar_button.pack(side=tk.RIGHT)
 
     def inserir_palavras(self, quantidade):
         self.root.withdraw()
